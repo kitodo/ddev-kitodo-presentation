@@ -60,7 +60,7 @@ services:
       # the solr-precreate command in the entrypoint uses it as a one-time
       # configuration to copy config into the newly-created core. It is not
       # used if the core has previously been created.
-      - ./solr:/solr-conf
+      - ./solr/configsets:/opt/solr/server/solr/configsets
 
       - ".:/mnt/ddev_config"
 
@@ -71,7 +71,8 @@ services:
       # executable (`chmod +x .ddev/solr/solr-init.sh
       - "./solr/solr-configupdate.sh:/docker-entrypoint-initdb.d/solr-configupdate.sh"
 
-    entrypoint: [ "sh", "-c", "docker-entrypoint.sh solr-precreate dev /solr-conf" ]
+    #entrypoint: [ "sh", "-c", "docker-entrypoint.sh solr-precreate dlfCore0" ]
+    #entrypoint: [ "sh", "-c", "docker-entrypoint.sh solr-precreate dlfCore0 /solr-conf/configsets/dlf" ]
 
     external_links:
       - "ddev-router:${DDEV_SITENAME}.${DDEV_TLD}"
