@@ -31,7 +31,7 @@ services:
     # and code at https://github.com/docker-solr/docker-solr
     # README: https://github.com/docker-solr/docker-solr/blob/master/README.md
     # It's almost impossible to work with it if you don't read the docs there
-    image: solr:7
+    image: solr:8
     restart: "no"
     # Solr is served from this port inside the container.
     ports:
@@ -60,7 +60,7 @@ services:
       # the solr-precreate command in the entrypoint uses it as a one-time
       # configuration to copy config into the newly-created core. It is not
       # used if the core has previously been created.
-      - ./solr/configsets:/opt/solr/server/solr/configsets
+      - ./solr/configsets:/var/solr/data/configsets
 
       - ".:/mnt/ddev_config"
 
