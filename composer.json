@@ -42,7 +42,8 @@
         "sgalinski/lfeditor": "^6.0",
         "evoweb/ew-llxml2xliff": "^2",
         "kitodo/presentation": "dev-master",
-        "solarium/solarium": "^4.2"
+        "solarium/solarium": "^4.2",
+        "slub/slub-digitalcollections": "dev-master"
     },
     "scripts": {
         "typo3-cms-scripts": [
