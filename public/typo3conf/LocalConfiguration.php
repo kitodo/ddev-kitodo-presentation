@@ -1,7 +1,7 @@
 <?php
 return [
     'BE' => [
-        'debug' => false,
+        'debug' => true,
         'explicitADmode' => 'explicitAllow',
         'installToolPassword' => '$argon2i$v=19$m=65536,t=16,p=1$VXJnNnRUc21ib3hQRy9nWQ$h5kXtYoc6M9krtBNoObXEvc3tToVxbfCqqbjBIbg4gw',
         'loginSecurityLevel' => 'normal',
@@ -81,7 +81,7 @@ return [
         ],
     ],
     'FE' => [
-        'debug' => false,
+        'debug' => true,
         'loginSecurityLevel' => 'normal',
         'pageNotFoundOnCHashError' => false,
         'passwordHashing' => [
@@ -105,7 +105,7 @@ return [
                     'writerConfiguration' => [
                         5 => [
                             'TYPO3\CMS\Core\Log\Writer\FileWriter' => [
-                                'disabled' => true,
+                                'disabled' => false,
                             ],
                         ],
                     ],
@@ -122,15 +122,15 @@ return [
         'transport_smtp_username' => '',
     ],
     'SYS' => [
-        'devIPmask' => '',
-        'displayErrors' => 0,
+        'devIPmask' => '*',
+        'displayErrors' => 1,
         'encryptionKey' => '3bb167a485145ace5255eef5e8d31345bbc932e0ad0732b10555814c1ff6168f2e10c4c26457f2777981d3951bb6acd8',
-        'exceptionalErrors' => 4096,
+        'exceptionalErrors' => 12290,
         'features' => [
             'newTranslationServer' => true,
             'unifiedPageTranslationHandling' => true,
         ],
         'sitename' => 'New TYPO3 site',
-        'systemLogLevel' => 2,
+        'systemLogLevel' => 0,
     ],
 ];
