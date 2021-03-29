@@ -61,6 +61,7 @@ services:
       # configuration to copy config into the newly-created core. It is not
       # used if the core has previously been created.
       - ./solr/configsets:/var/solr/data/configsets
+      - ./solr/contrib/ocrsearch:/opt/solr/contrib/ocrsearch
 
       - ".:/mnt/ddev_config"
 
