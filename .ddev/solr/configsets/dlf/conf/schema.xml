@@ -44,7 +44,7 @@ limitations under the License.
             <analyzer type="index">
                 <!-- For converting OCR to plaintext -->
                 <charFilter class="de.digitalcollections.solrocr.lucene.filters.OcrCharFilterFactory" />
-
+                
                 <charFilter class="solr.HTMLStripCharFilterFactory" />
                 <tokenizer class="solr.WhitespaceTokenizerFactory" />
                 <filter class="solr.FlattenGraphFilterFactory" />
