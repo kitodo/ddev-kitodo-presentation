@@ -1,12 +1,12 @@
 {
     "repositories": {
         "dlf": {
-            "type": "path",
-            "url": "/var/www/extensions/dlf"
+            "type": "git",
+            "url": "https://github.com/beatrycze-volk/kitodo-presentation.git"
         },
         "digitialcollections": {
-            "type": "path",
-            "url": "/var/www/extensions/slub_digitalcollections"
+            "type": "git",
+            "url": "https://github.com/slub/slub_digitalcollections.git"
         }
     },
     "name": "typo3/cms-base-distribution",
@@ -41,9 +41,8 @@
         "typo3/cms-lowlevel": "^9.5",
         "sgalinski/lfeditor": "^6.0",
         "evoweb/ew-llxml2xliff": "^2",
-        "kitodo/presentation": "dev-master",
-        "solarium/solarium": "^4.2",
-        "slub/slub-digitalcollections": "dev-master"
+        "kitodo/presentation": "dev-use-solr-highlighting",
+        "solarium/solarium": "^4.2"
     },
     "scripts": {
         "typo3-cms-scripts": [
