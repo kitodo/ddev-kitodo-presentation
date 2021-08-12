@@ -1,9 +1,5 @@
 {
     "repositories": {
-        "digitialcollections": {
-            "type": "path",
-            "url": "/var/www/extensions/slub_digitalcollections"
-        }
     },
     "name": "typo3/cms-base-distribution",
     "description": "TYPO3 CMS Base Distribution",
@@ -36,7 +32,7 @@
         "typo3/cms-viewpage": "^9.5",
         "typo3/cms-lowlevel": "^9.5",
         "sgalinski/lfeditor": "^6.0",
-        "kitodo/presentation": "dev-adjust-sid-tool as dev-master",
+        "kitodo/presentation": "dev-master",
         "slub/slub-digitalcollections": "dev-master",
         "evoweb/ew-llxml2xliff": "^2",
         "kitodo/presentation": "dev-master",
