@@ -1,8 +1,8 @@
 {
     "repositories": {
         "dlf": {
-            "type": "path",
-            "url": "/var/www/extensions/dlf"
+            "type": "git",
+            "url": "https://github.com/beatrycze-volk/kitodo-presentation.git"
         },
         "digitialcollections": {
             "type": "git",
