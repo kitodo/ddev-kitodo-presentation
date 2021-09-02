@@ -1,8 +1,8 @@
 {
     "repositories": {
         "dlf": {
-            "type": "git",
-            "url": "https://github.com/beatrycze-volk/kitodo-presentation.git"
+            "type": "path",
+            "url": "/var/www/extensions/dlf"
         },
         "digitialcollections": {
             "type": "git",
@@ -40,7 +40,7 @@
         "typo3/cms-viewpage": "^9.5",
         "typo3/cms-lowlevel": "^9.5",
         "sgalinski/lfeditor": "^6.0",
-        "kitodo/presentation": "dev-use-solr-highlighting as dev-master",
+        "kitodo/presentation": "dev-beatrycze-volk-use-solr-highlighting as dev-master",
         "slub/slub-digitalcollections": "dev-master",
         "evoweb/ew-llxml2xliff": "^2",
         "solarium/solarium": "^4.2"

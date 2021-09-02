@@ -702,18 +702,20 @@
       <str name="df">default</str>
       <str name="q.op">AND</str>
       <!-- Default search field
-         <str name="df">text</str> 
+         <str name="df">text</str>
         -->
       <!-- Change from JSON to XML format (the default prior to Solr 7.0)
-         <str name="wt">xml</str> 
+         <str name="wt">xml</str>
         -->
     </lst>
 
     <arr name="components">
-          <str>query</str>
-          <str>ocrHighlight</str>
-          <str>highlight</str>
-      </arr>
+      <str>query</str>
+      <str>facet</str>
+      <str>ocrHighlight</str>
+      <str>highlight</str>
+    </arr>
+
     <!-- In addition to defaults, "appends" params can be specified
          to identify values which should be appended to the list of
          multi-val params from the query (or the existing "defaults").
@@ -884,9 +886,9 @@
             <str name="queryAnalyzerFieldType">autocomplete</str>
         </lst>
     </searchComponent>
-  
+
  <schemaFactory class="ClassicIndexSchemaFactory"/>
-  
+
   <!-- Spell Check
 
        The spell check component can return a list of alternative spelling
@@ -894,12 +896,12 @@
 
        http://wiki.apache.org/solr/SpellCheckComponent
     -->
-    
+
   <!-- Term Vector Component
 
        http://wiki.apache.org/solr/TermVectorComponent
     -->
-    
+
   <!-- Clustering Component. (Omitted here. See the default Solr example for a typical configuration.) -->
 
   <!-- Terms Component
