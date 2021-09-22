@@ -1,4 +1,4 @@
-base: /
+base: 'https://ddev-kitodo-presentation.ddev.site/'
 baseVariants: {  }
 errorHandling: {  }
 languages:
