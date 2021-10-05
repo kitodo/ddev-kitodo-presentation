@@ -1,8 +1,12 @@
 {
     "repositories": {
+        "slub-digitalcollections": {
+            "type": "path",
+            "url": "/var/www/extensions/slub_digitalcollections"
+        },
         "dlf": {
-            "type": "git",
-            "url": "https://github.com/kitodo/kitodo-presentation.git"
+            "type": "path",
+            "url": "/var/www/extensions/dlf"
         },
         "digitialcollections": {
             "type": "git",
