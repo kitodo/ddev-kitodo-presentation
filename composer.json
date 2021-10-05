@@ -32,10 +32,8 @@
         "typo3/cms-viewpage": "^9.5",
         "typo3/cms-lowlevel": "^9.5",
         "sgalinski/lfeditor": "^6.0",
-        "kitodo/presentation": "dev-master",
         "slub/slub-digitalcollections": "dev-master",
-        "evoweb/ew-llxml2xliff": "^2",
-        "kitodo/presentation": "dev-master",
+        "kitodo/presentation": "^3.2",
         "solarium/solarium": "^4.2"
     },
     "scripts": {
