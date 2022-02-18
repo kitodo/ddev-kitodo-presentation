@@ -3,7 +3,8 @@ return [
     'BE' => [
         'debug' => true,
         'explicitADmode' => 'explicitAllow',
-        'installToolPassword' => '$argon2i$v=19$m=65536,t=16,p=1$VXJnNnRUc21ib3hQRy9nWQ$h5kXtYoc6M9krtBNoObXEvc3tToVxbfCqqbjBIbg4gw',
+        'installToolPassword' => '$argon2i$v=19$m=65536,t=16,p=1$TXFJeXJoc3BOQXEwdHYxcw$zdkT+1U4CMMzdcJyEu+CE0b8vd0v7YqAeoshYKmTmQM',
+        'languageDebug' => false,
         'loginSecurityLevel' => 'normal',
         'passwordHashing' => [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
@@ -18,15 +19,7 @@ return [
             ],
         ],
     ],
-    'EXT' => [
-        'extConf' => [
-            'backend' => 'a:6:{s:9:"loginLogo";s:0:"";s:19:"loginHighlightColor";s:0:"";s:20:"loginBackgroundImage";s:0:"";s:13:"loginFootnote";s:0:"";s:11:"backendLogo";s:0:"";s:14:"backendFavicon";s:0:"";}',
-            'dlf' => 'a:49:{s:15:"metadataFormats";s:1:"0";s:9:"useragent";s:19:"Kitodo.Presentation";s:16:"forceAbsoluteUrl";s:1:"0";s:21:"forceAbsoluteUrlHttps";s:1:"0";s:7:"caching";s:1:"0";s:21:"publishNewCollections";s:1:"1";s:13:"unhideOnIndex";s:1:"0";s:13:"fileGrpImages";s:11:"DEFAULT,MAX";s:13:"fileGrpThumbs";s:6:"THUMBS";s:15:"fileGrpDownload";s:8:"DOWNLOAD";s:15:"fileGrpFulltext";s:8:"FULLTEXT";s:12:"fileGrpAudio";s:5:"AUDIO";s:16:"indexAnnotations";s:1:"0";s:18:"iiifThumbnailWidth";s:3:"150";s:19:"iiifThumbnailHeight";s:3:"150";s:11:"solrConnect";s:1:"0";s:9:"solrHttps";s:1:"0";s:8:"solrHost";s:4:"solr";s:8:"solrPort";s:4:"8983";s:8:"solrPath";s:1:"/";s:8:"solrUser";s:0:"";s:8:"solrPass";s:0:"";s:11:"solrTimeout";s:2:"10";s:19:"solrAllowCoreDelete";s:1:"0";s:11:"solrFieldId";s:2:"id";s:12:"solrFieldUid";s:3:"uid";s:12:"solrFieldPid";s:3:"pid";s:13:"solrFieldPage";s:4:"page";s:15:"solrFieldPartof";s:6:"partof";s:13:"solrFieldRoot";s:4:"root";s:12:"solrFieldSid";s:3:"sid";s:17:"solrFieldToplevel";s:8:"toplevel";s:13:"solrFieldType";s:4:"type";s:14:"solrFieldTitle";s:5:"title";s:15:"solrFieldVolume";s:6:"volume";s:18:"solrFieldThumbnail";s:9:"thumbnail";s:16:"solrFieldDefault";s:7:"default";s:18:"solrFieldTimestamp";s:9:"timestamp";s:21:"solrFieldAutocomplete";s:12:"autocomplete";s:17:"solrFieldFulltext";s:8:"fulltext";s:17:"solrFieldRecordId";s:9:"record_id";s:13:"solrFieldPurl";s:4:"purl";s:12:"solrFieldUrn";s:3:"urn";s:17:"solrFieldLocation";s:8:"location";s:19:"solrFieldCollection";s:10:"collection";s:16:"solrFieldLicense";s:7:"license";s:14:"solrFieldTerms";s:5:"terms";s:21:"solrFieldRestrictions";s:12:"restrictions";s:13:"solrFieldGeom";s:4:"geom";}',
-            'extensionmanager' => 'a:2:{s:21:"automaticInstallation";s:1:"1";s:11:"offlineMode";s:1:"0";}',
-            'lfeditor' => 'a:9:{s:13:"viewLanguages";s:0:"";s:15:"defaultLanguage";s:0:"";s:11:"searchRegex";s:60:"/^([a-z0-9_]*locallang[a-z0-9_-]*\\.(php|xml)|[^\\.]*\\.xlf)$/i";s:9:"extIgnore";s:23:"/^(CVS|.svn|.git|csh_)/";s:12:"extWhitelist";s:0:"";s:13:"changeXlfDate";s:1:"1";s:17:"editModeExtension";s:1:"1";s:27:"pathAdditionalConfiguration";s:37:"typo3conf/AdditionalConfiguration.php";s:16:"beMainModuleName";s:4:"user";}',
-            'scheduler' => 'a:2:{s:11:"maxLifetime";s:4:"1440";s:15:"showSampleTasks";s:1:"1";}',
-        ],
-    ],
+    'EXT' => [],
     'EXTCONF' => [
         'lang' => [
             'availableLanguages' => [
@@ -45,6 +38,7 @@ return [
         ],
         'dlf' => [
             'caching' => '0',
+            'enableInternalProxy' => '0',
             'fileGrpAudio' => 'AUDIO',
             'fileGrpDownload' => 'DOWNLOAD',
             'fileGrpFulltext' => 'FULLTEXT',
@@ -143,6 +137,11 @@ return [
             'CMS' => [
                 'deprecations' => [
                     'writerConfiguration' => [
+                        'notice' => [
+                            'TYPO3\CMS\Core\Log\Writer\FileWriter' => [
+                                'disabled' => false,
+                            ],
+                        ],
                         5 => [
                             'TYPO3\CMS\Core\Log\Writer\FileWriter' => [
                                 'disabled' => false,
@@ -162,15 +161,43 @@ return [
         'transport_smtp_username' => '',
     ],
     'SYS' => [
+        'caching' => [
+            'cacheConfigurations' => [
+                'hash' => [
+                    'backend' => 'TYPO3\\CMS\\Core\\Cache\\Backend\\Typo3DatabaseBackend',
+                ],
+                'imagesizes' => [
+                    'backend' => 'TYPO3\\CMS\\Core\\Cache\\Backend\\Typo3DatabaseBackend',
+                ],
+                'pages' => [
+                    'backend' => 'TYPO3\\CMS\\Core\\Cache\\Backend\\Typo3DatabaseBackend',
+                ],
+                'pagesection' => [
+                    'backend' => 'TYPO3\\CMS\\Core\\Cache\\Backend\\Typo3DatabaseBackend',
+                ],
+                'rootline' => [
+                    'backend' => 'TYPO3\\CMS\\Core\\Cache\\Backend\\Typo3DatabaseBackend',
+                ],
+            ],
+        ],
         'devIPmask' => '*',
         'displayErrors' => 1,
         'encryptionKey' => '3bb167a485145ace5255eef5e8d31345bbc932e0ad0732b10555814c1ff6168f2e10c4c26457f2777981d3951bb6acd8',
         'exceptionalErrors' => 12290,
         'features' => [
+            'felogin.extbase' => true,
+            'fluidBasedPageModule' => false,
+            'form.legacyUploadMimeTypes' => true,
             'newTranslationServer' => true,
+            'rearrangedRedirectMiddlewares' => false,
+            'redirects.hitCount' => false,
+            'security.backend.enforceReferrer' => true,
+            'security.backend.htmlSanitizeRte' => false,
+            'security.frontend.htmlSanitizeParseFuncDefault' => true,
+            'security.frontend.keepSessionDataOnLogout' => false,
             'unifiedPageTranslationHandling' => true,
+            'yamlImportsFollowDeclarationOrder' => false,
         ],
         'sitename' => 'New TYPO3 site',
-        'systemLogLevel' => 0,
     ],
 ];
