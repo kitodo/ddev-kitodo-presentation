@@ -33,8 +33,8 @@
         "typo3/cms-viewpage": "^10.4",
         "typo3/cms-lowlevel": "^10.4",
         "sgalinski/lfeditor": "^6.0",
-        "slub/slub-digitalcollections": "dev-master",
-        "kitodo/presentation": "dev-master",
+        "slub/slub-digitalcollections": "dev-dev-kitodo-extbase-fluid",
+        "kitodo/presentation": "dev-dev-extbase-fluid as dev-master",
         "solarium/solarium": "^4.2",
         "typo3/cms-scheduler": "^10.4"
     },
