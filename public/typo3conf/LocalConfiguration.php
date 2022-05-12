@@ -14,7 +14,7 @@ return [
     'DB' => [
         'Connections' => [
             'Default' => [
-                'charset' => 'utf8',
+                'charset' => 'utf8mb4',
                 'driver' => 'mysqli',
             ],
         ],
@@ -49,7 +49,6 @@ return [
             'iiifThumbnailHeight' => '150',
             'iiifThumbnailWidth' => '150',
             'indexAnnotations' => '0',
-            'metadataFormats' => '0',
             'publishNewCollections' => '1',
             'solrAllowCoreDelete' => '0',
             'solrConnect' => '0',
